@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"penny2243.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"right","width":300,"display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Markdown 是一種輕量級標記式語言，目標是實現「易讀易寫」，在中文版 Ｍarkdown 中提到，可以將之視為一種編寫的格式，而 HTML 是一種發佈的格式，創始人 John Gruber 對 Markdown 也是這麼介紹：  Markdown is a text-to-HTML conversion tool for web writers.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="學習 Markdown 及語法速記">
+<meta property="og:url" content="https://penny2243.github.io/2020/09/06/markdown/index.html">
+<meta property="og:site_name" content="Penny&#39;s Blog">
+<meta property="og:description" content="Markdown 是一種輕量級標記式語言，目標是實現「易讀易寫」，在中文版 Ｍarkdown 中提到，可以將之視為一種編寫的格式，而 HTML 是一種發佈的格式，創始人 John Gruber 對 Markdown 也是這麼介紹：  Markdown is a text-to-HTML conversion tool for web writers.">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://penny2243.github.io/2020/09/06/markdown/header_demo.png">
+<meta property="og:image" content="https://penny2243.github.io/2020/09/06/markdown/demo1.png">
+<meta property="og:image" content="https://penny2243.github.io/2020/09/06/markdown/demo2.png">
+<meta property="article:published_time" content="2020-09-06T07:24:49.000Z">
+<meta property="article:modified_time" content="2020-09-06T07:37:09.252Z">
+<meta property="article:author" content="Penny Li">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://penny2243.github.io/2020/09/06/markdown/header_demo.png">
+
+<link rel="canonical" href="https://penny2243.github.io/2020/09/06/markdown/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>學習 Markdown 及語法速記 | Penny's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145874280-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-145874280-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Penny's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">為自己做筆記</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-應用"><span class="nav-text">Markdown 應用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#區塊元素-Block-Element"><span class="nav-text">區塊元素 Block Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行內元素-Span-Element"><span class="nav-text">行內元素 Span Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段落-Paragraph"><span class="nav-text">段落 Paragraph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#標題-Header"><span class="nav-text">標題 Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#區塊引言-Blockquote"><span class="nav-text">區塊引言 Blockquote</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#blockquote-中的-h3"><span class="nav-text">blockquote 中的 h3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表-List"><span class="nav-text">列表 List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任務列表-Task-List-GFM"><span class="nav-text">任務列表 Task List (GFM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程式碼-Code"><span class="nav-text">程式碼 Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格-Table-GFM"><span class="nav-text">表格 Table (GFM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平線-Horizontal-Rule"><span class="nav-text">水平線 Horizontal Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#強調-Emphasis"><span class="nav-text">強調 Emphasis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#連結-Link"><span class="nav-text">連結 Link</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inline-style"><span class="nav-text">inline style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference-style"><span class="nav-text">reference style</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圖片-Image"><span class="nav-text">圖片 Image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跳脫字元-Backslash-Escape"><span class="nav-text">跳脫字元 Backslash Escape</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Penny Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://penny2243.github.io/2020/09/06/markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Penny Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Penny's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          學習 Markdown 及語法速記
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-06 15:24:49 / Modified: 15:37:09" itemprop="dateCreated datePublished" datetime="2020-09-06T15:24:49+08:00">2020-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/06/markdown/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/06/markdown/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Markdown 是一種輕量級標記式語言，目標是實現「易讀易寫」，在<a href="https://markdown.tw/" target="_blank" rel="noopener">中文版 Ｍarkdown</a> 中提到，可以將之視為一種編寫的格式，而 HTML 是一種發佈的格式，創始人 John Gruber 對 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> 也是這麼介紹：</p>
+<blockquote>
+<p>Markdown is a text-to-HTML conversion tool for web writers.</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="Markdown-應用"><a href="#Markdown-應用" class="headerlink" title="Markdown 應用"></a>Markdown 應用</h2><p>由於 Markdown 易讀易寫的特性，許多服務也支援了 Markdown 語法，例如：</p>
+<ul>
+<li>GitHub 、 GitLab 等，甚至延伸出<strong>變形版 Markdown</strong> ，例如 GFM (Github-flavored Markdown ， Github 偏好的 Markdown）。</li>
+<li>即時通訊軟體 Slack 、 部落格編寫 Hexo 、 即時文件工具 HackMD 、專案管理工具 Trello 等等。</li>
+</ul>
+<p>但要特別注意，上述的服務並非支援一致的 Markdown 語法，有可能只支援部分語法或是有自己延伸的語法，端看各個服務實作出的 Markdown 環境而定。</p>
+<p>簡單介紹完 Markdown ，直接來看怎麼使用吧！下面整理個人覺得會常用的語法及 GFM ，作為金魚腦回憶用法的參考 XD</p>
+<hr>
+<p>Markdown 也分成2大類，分成<strong>區塊元素 Block Element</strong> 及 <strong>行內元素 Span Element</strong> (如同 HTML 般)</p>
+<h2 id="區塊元素-Block-Element"><a href="#區塊元素-Block-Element" class="headerlink" title="區塊元素 Block Element"></a>區塊元素 Block Element</h2><ul>
+<li><a href="#段落-Paragraph">段落 paragraph</a></li>
+<li><a href="#標題-Header">標題 Header</a></li>
+<li><a href="#區塊引言-Blockquote">區塊引言 Blockquote</a></li>
+<li><a href="#列表-List">列表 List</a></li>
+<li><a href="#任務列表-Task-List-GFM">任務列表 Task List (GFM)</a></li>
+<li><a href="#程式碼-Code">程式碼區塊 Code Block</a></li>
+<li><a href="#表格-Table-GFM">表格 Table (GFM)</a></li>
+<li><a href="#水平線-Horizontal-Rule">水平線 Horizontal Rule</a></li>
+</ul>
+<h2 id="行內元素-Span-Element"><a href="#行內元素-Span-Element" class="headerlink" title="行內元素 Span Element"></a>行內元素 Span Element</h2><ul>
+<li><a href="#強調-Emphasis">強調 Emphasis</a></li>
+<li><a href="#連結-Link">連結 Link</a></li>
+<li><a href="#圖片-Image">圖片 Image</a></li>
+<li><a href="#程式碼-Code">程式碼 Code Span</a></li>
+<li><a href="#跳脫字元-Backslash-Escape">跳脫字元 Backslash Escape</a></li>
+</ul>
+<h2 id="段落-Paragraph"><a href="#段落-Paragraph" class="headerlink" title="段落 Paragraph"></a>段落 Paragraph</h2><div class="tabs" id="demo1"><ul class="nav-tabs"><li class="tab active"><a href="#demo1-1">寫法</a></li><li class="tab"><a href="#demo1-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo1-1"><p>HI~<br>我是第一個 p 段落區塊<br><strong><mark class="label info">(段落跟段落之間留空行)</mark></strong><br>我是第二個 p 段落區塊</p></div><div class="tab-pane" id="demo1-2"><p>HI~<br>我是第一個 p 段落區塊</p>
+<p>我是第二個 p 段落區塊</p></div></div></div>
+
+<h2 id="標題-Header"><a href="#標題-Header" class="headerlink" title="標題 Header"></a>標題 Header</h2><div class="tabs" id="demo2"><ul class="nav-tabs"><li class="tab active"><a href="#demo2-1">寫法</a></li><li class="tab"><a href="#demo2-2">結果</a></li><li class="tab"><a href="#demo2-3">其他寫法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo2-1"><p><strong><mark class="label info">文字與 # 記得留空格</mark></strong><br># 標題1 h1<br>## 標題2 h2<br>### 標題3 h3<br>#### 標題4 h4<br>##### 標題5 h5<br>###### 標題6 h6</p></div><div class="tab-pane" id="demo2-2"><p><img src="header_demo.png" alt="h1\-h6 demo" title="h1-h6 demo"></p></div><div class="tab-pane" id="demo2-3"><p>標題1下方加上多個「=」、標題2下方加上多個「-」也會有相同效果，如同在標題下方劃線的表示方式，例如：<br>標題1<br>===<br>標題2<br>---<br><strong><mark class="label info">PS. === 及 — 下方保留空行</mark></strong></p></div></div></div>
+
+<h2 id="區塊引言-Blockquote"><a href="#區塊引言-Blockquote" class="headerlink" title="區塊引言 Blockquote"></a>區塊引言 Blockquote</h2><div class="tabs" id="demo3"><ul class="nav-tabs"><li class="tab active"><a href="#demo3-1">寫法</a></li><li class="tab"><a href="#demo3-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo3-1"><p><strong><mark class="label info">文字與 &gt; 記得留空格</mark></strong><br>&gt; 這是第1個 p in blockquote<br>&gt;<br>&gt; 這是第2個 p in blockquote<br>&gt;<br>&gt; ### blockquote 中的 h3<br>&gt; &gt; blockquote 中的 blockquote</p></div><div class="tab-pane" id="demo3-2"><blockquote>
+<p>This is a blockquote.</p>
+<p>blockquote 中的 p 段落</p>
+<h3 id="blockquote-中的-h3"><a href="#blockquote-中的-h3" class="headerlink" title="blockquote 中的 h3"></a>blockquote 中的 h3</h3><blockquote>
+<p>blockquote 中的 blockquote</p>
+</blockquote>
+</blockquote></div></div></div>
+
+<h2 id="列表-List"><a href="#列表-List" class="headerlink" title="列表 List"></a>列表 List</h2><p><code>&lt;ul&gt;</code> unordered/bulleted list 可以使用星號、加號、減號 (*/+/-) 來標記列點。<br><code>&lt;ol&gt;</code> ordered/numbered list 則使用數字搭配小數點符號 . 標記項目。<br>要表示下一個層級或是同一項次內，可以使用 tab 或是4個空格進行縮排。</p>
+<div class="tabs" id="demolist"><ul class="nav-tabs"><li class="tab active"><a href="#demolist-1">ul 寫法</a></li><li class="tab"><a href="#demolist-2">ul 結果</a></li><li class="tab"><a href="#demolist-3">ol 寫法</a></li><li class="tab"><a href="#demolist-4">ol 結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demolist-1"><p><strong><mark class="label info">一樣文字與符號記得留空格!</mark></strong><br>* 無序號列點一<br>&nbsp;&nbsp;&nbsp;&nbsp;我是列點一的第2行，屬於同項次。<br>+ 無序號列點二<br>&nbsp;&nbsp;&nbsp;&nbsp;- 子列點一<br>&nbsp;&nbsp;&nbsp;&nbsp;- 子列點二<br>- 無序號列點三</p></div><div class="tab-pane" id="demolist-2"><ul>
+<li>無序號列點一<br>我是列點一的第2行，屬於同項次。</li>
+</ul>
+<ul>
+<li>無序號列點二<ul>
+<li>子列點一</li>
+<li>子列點二</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>無序號列點三</li>
+</ul></div><div class="tab-pane" id="demolist-3"><p><strong><mark class="label info">一樣文字與 . 記得留空格!</mark></strong><br>1. 列點一<br>&nbsp;&nbsp;&nbsp;&nbsp;1. 有序子列點一<br>&nbsp;&nbsp;&nbsp;&nbsp;2. 有序子列點二<br>2. 列點二<br>3. 列點三</p></div><div class="tab-pane" id="demolist-4"><ol>
+<li>列點一<ol>
+<li>有序子列點一</li>
+<li>有序子列點二</li>
+</ol>
+</li>
+<li>列點二</li>
+<li>列點三</li>
+</ol></div></div></div>
+
+<h2 id="任務列表-Task-List-GFM"><a href="#任務列表-Task-List-GFM" class="headerlink" title="任務列表 Task List (GFM)"></a>任務列表 Task List (GFM)</h2><p>可以簡單想成是 ul 跟 checkbox 的結合。</p>
+<div class="tabs" id="demotasklist"><ul class="nav-tabs"><li class="tab active"><a href="#demotasklist-1">寫法</a></li><li class="tab"><a href="#demotasklist-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demotasklist-1"><p>- [ ] unchecked<br>- [x] checked<br>&nbsp;&nbsp;- [ ] sub-task</p></div><div class="tab-pane" id="demotasklist-2"><ul>
+<li><input disabled="" type="checkbox"> unchecked</li>
+<li><input checked="" disabled="" type="checkbox"> checked<ul>
+<li><input disabled="" type="checkbox"> sub-task</li>
+</ul>
+</li>
+</ul></div></div></div>
+
+<h2 id="程式碼-Code"><a href="#程式碼-Code" class="headerlink" title="程式碼 Code"></a>程式碼 Code</h2><p>標記一小段行內程式碼，可以用 <code>`</code> 反引號 backtick 把它包起來。<br>(如果要在 code 之間顯示反引號，外層可用多個反引號包起來 ex. `` ` ``)<br>標記一段區塊程式碼，每行以4個空格或1個 tab 進行縮排。</p>
+<div class="tabs" id="democode"><ul class="nav-tabs"><li class="tab active"><a href="#democode-1">寫法</a></li><li class="tab"><a href="#democode-2">結果</a></li><li class="tab"><a href="#democode-3">建議寫法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="democode-1"><p><strong><mark class="label info">code span</mark></strong><br>這邊有一段 code :`&lt;p&gt;Hello!&lt;/p&gt;`在文字間。</p>
+<p><strong><mark class="label info">code block</mark></strong><br>&nbsp;&nbsp;&nbsp;&nbsp;/* test */<br>&nbsp;&nbsp;&nbsp;&nbsp;function test() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var a = ‘hello world’;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;&nbsp;&nbsp;test();</p></div><div class="tab-pane" id="democode-2"><p><strong><mark class="label info">code span</mark></strong><br>這邊有一段 code :<code>&lt;p&gt;Hello!&lt;/p&gt;</code>在文字間。</p>
+<p><strong><mark class="label info">code block</mark></strong></p>
+<pre><code>/* test */
+function test() {
+  var a = &apos;hello world&apos;;
+  console.log(a);
+};
+test();</code></pre></div><div class="tab-pane" id="democode-3"><p>雖然在 <a href="https://daringfireball.net/projects/markdown/syntax#precode" target="_blank" rel="noopener">John Gruber 的規格</a>中沒看到這種寫法，但是目前常見的 <strong><mark class="label success">code clock</mark></strong> 多是在區塊上下使用<strong>連續三個反引號</strong>將程式碼包起來，甚至可以指定語言來渲染語法高亮(根據環境可以支援渲染的語言不盡相同)，比起每行使用縮排也更容易些。</p>
+<p>寫法：<br>```javascript<br>var s = “JavaScript 語法高亮”;<br>alert(s);<br>```</p>
+<p>```python<br>s = “Python 語法高亮”<br>print s<br>```</p>
+<p>結果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"JavaScript 語法高亮"</span>;</span><br><span class="line">alert(s);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python 語法高亮"</span></span><br><span class="line"><span class="keyword">print</span> s</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h2 id="表格-Table-GFM"><a href="#表格-Table-GFM" class="headerlink" title="表格 Table (GFM)"></a>表格 Table (GFM)</h2><p>語法就像是畫出表格般，更多語法可以自行參考<a href="https://github.github.com/gfm/#tables-extension-" target="_blank" rel="noopener">這裡</a>。</p>
+<div class="tabs" id="demotable"><ul class="nav-tabs"><li class="tab active"><a href="#demotable-1">寫法</a></li><li class="tab"><a href="#demotable-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demotable-1"><p>| thead1 | thead2 |<br>| --- | --- |<br>| baz | bim |<br>| foo | bar |</p></div><div class="tab-pane" id="demotable-2"><table>
+<thead>
+<tr>
+<th>thead1</th>
+<th>thead2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>baz</td>
+<td>bim</td>
+</tr>
+<tr>
+<td>foo</td>
+<td>bar</td>
+</tr>
+</tbody></table></div></div></div>
+
+<h2 id="水平線-Horizontal-Rule"><a href="#水平線-Horizontal-Rule" class="headerlink" title="水平線 Horizontal Rule"></a>水平線 Horizontal Rule</h2><p>可以使用連續三個以上星號、加號、連字號、下底線 (*/-/_) 來產生水平分隔線(符號之間空格可有可無)。</p>
+<div class="tabs" id="demohr"><ul class="nav-tabs"><li class="tab active"><a href="#demohr-1">寫法</a></li><li class="tab"><a href="#demohr-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demohr-1"><p>下列這些寫法都可以，效果同 <code>&lt;hr /&gt;</code>:<br>* * *</p>
+<p>***</p>
+<p>*****</p>
+<p>- - -</p>
+<p>---------------</p></div><div class="tab-pane" id="demohr-2"><hr></div></div></div>
+
+<h2 id="強調-Emphasis"><a href="#強調-Emphasis" class="headerlink" title="強調 Emphasis"></a>強調 Emphasis</h2><p>可以使用 <code>*</code> 或是 <code>_</code> ，開頭及結尾需使用相同的符號，1個時會被轉為<em>斜體&lt;em&gt;</em>，2個時會被轉為<strong>粗體&lt;strong&gt;</strong>。</p>
+<div class="tabs" id="demo4"><ul class="nav-tabs"><li class="tab active"><a href="#demo4-1">寫法</a></li><li class="tab"><a href="#demo4-2">結果</a></li><li class="tab"><a href="#demo4-3">其他</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo4-1"><p>_這是斜體_<br>*這也是斜體*<br>__這是粗體__<br>**這也是粗體**</p></div><div class="tab-pane" id="demo4-2"><p><em>這是斜體</em><br><em>這也是斜體</em><br><strong>這是粗體</strong><br><strong>這也是粗體</strong></p></div><div class="tab-pane" id="demo4-3"><p>(GFM)刪除線使用兩個波浪符號 <code>~</code> 。<br>寫法： ~~刪除這個~~<br>結果： <del>刪除這個</del></p></div></div></div>
+
+
+
+
+<h2 id="連結-Link"><a href="#連結-Link" class="headerlink" title="連結 Link"></a>連結 Link</h2><p>Markdown 支援2種寫法， inline 以及 reference ，以下分成2個 tabs 說明。</p>
+<h3 id="inline-style"><a href="#inline-style" class="headerlink" title="inline style"></a>inline style</h3><div class="tabs" id="demo6"><ul class="nav-tabs"><li class="tab active"><a href="#demo6-1">寫法</a></li><li class="tab"><a href="#demo6-2">結果</a></li><li class="tab"><a href="#demo6-3">補充</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo6-1"><p><strong><mark class="label info">寫法：[連結文字](連結網址)</mark></strong><br>示例：[Google 頁面](https://www.google.com.tw/)</p></div><div class="tab-pane" id="demo6-2"><p>示例：<a href="https://www.google.com.tw/" target="_blank" rel="noopener">Google 頁面</a></p></div><div class="tab-pane" id="demo6-3"><p>可以讓 &lt;a&gt; 帶上 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title" target="_blank" rel="noopener">title</a> 屬性(滑鼠移到上方會看到的額外資訊)，寫法如下：<br>寫法：[Google 頁面](https://www.google.com.tw/ “with a title”)<br>結果：<a href="https://www.google.com.tw/" target="_blank" rel="noopener" title="with a title">Google 頁面</a></p></div></div></div>
+
+<h3 id="reference-style"><a href="#reference-style" class="headerlink" title="reference style"></a>reference style</h3><div class="tabs" id="demo7"><ul class="nav-tabs"><li class="tab active"><a href="#demo7-1">通用寫法</a></li><li class="tab"><a href="#demo7-2">示例</a></li><li class="tab"><a href="#demo7-3">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo7-1"><p><strong><mark class="label info">撰寫時內文區塊</mark></strong><br>Lorem Ipsum <mark class="label success">[連結文字]</mark><mark class="label danger">[參考 id]</mark> Lorem Ipsum.</p>
+<p><strong><mark class="label info">撰寫時參考區塊， title 是 optional 可有可無</mark></strong><br><mark class="label danger">[參考 id]</mark>: 連結網址 “title”</p>
+<p><strong><mark class="label info">參考 id 可以是 letter/number/space ，不區分大小寫</mark></strong></p></div><div class="tab-pane" id="demo7-2"><p>我想去 [Google][1] 頁面還有[奇摩][YAHOO]頁面。</p>
+<p>[1]: https://www.google.com/   “Google title”<br>[yahoo]: https://tw.yahoo.com/ “Yahoo title”</p></div><div class="tab-pane" id="demo7-3"><p>我想去 <a href="https://www.google.com/" target="_blank" rel="noopener" title="Google title">Google</a> 頁面還有<a href="https://tw.yahoo.com/" target="_blank" rel="noopener" title="Yahoo title">奇摩</a>頁面。</p></div></div></div>
+
+<h2 id="圖片-Image"><a href="#圖片-Image" class="headerlink" title="圖片 Image"></a>圖片 Image</h2><p>跟連結寫法很像，前面多了個驚嘆號 <code>!</code>， <code>alt</code> 及 <code>title</code> 屬性都是 optional 。</p>
+<div class="tabs" id="demo8"><ul class="nav-tabs"><li class="tab active"><a href="#demo8-1">通用寫法</a></li><li class="tab"><a href="#demo8-2">示例</a></li><li class="tab"><a href="#demo8-3">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo8-1"><p><strong><mark class="label info">Inline style:</mark></strong></p>
+<p>![alt](/path/to/img.jpg “title”)<br><strong><mark class="label info">Reference style:</mark></strong></p>
+<p>![alt][id]</p>
+<p>[id]: /path/to/img.jpg “title”</p></div><div class="tab-pane" id="demo8-2"><p><strong><mark class="label info">Inline style:</mark></strong><br>![](demo1.png)</p>
+<p><strong><mark class="label info">Reference style:</mark></strong><br>![demo2 alt][demo 2]</p>
+<p>[demo 2]: demo2.png “demo2 title”</p></div><div class="tab-pane" id="demo8-3"><p><img src="demo1.png" alt=""><br><img src="demo2.png" alt="demo2 alt" title="demo2 title"></p></div></div></div>
+
+<h2 id="跳脫字元-Backslash-Escape"><a href="#跳脫字元-Backslash-Escape" class="headerlink" title="跳脫字元 Backslash Escape"></a>跳脫字元 Backslash Escape</h2><p>可以使用 <code>\</code> 反斜線 backslash 來進行特殊字元的跳脫。</p>
+<div class="tabs" id="demo1"><ul class="nav-tabs"><li class="tab active"><a href="#demo1-1">寫法</a></li><li class="tab"><a href="#demo1-2">結果</a></li></ul><div class="tab-content"><div class="tab-pane active" id="demo1-1"><p>\*例如你想要顯示星號而不是顯示斜體\*</p></div><div class="tab-pane" id="demo1-2"><p>例如你想要顯示星號而不是顯示斜體</p></div></div></div>
+
+
+<hr>
+<p><strong>參考：</strong></p>
+<ul>
+<li><a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">John Gruber - Markdown 1.0.1</a></li>
+<li><a href="https://markdown.tw/" target="_blank" rel="noopener">https://markdown.tw/</a></li>
+<li><a href="https://gist.github.com/billy3321/1001749662c370887c63bb30f26c9e6e" target="_blank" rel="noopener">Markdown Cheatsheet 中文版.md</a></li>
+<li><a href="https://github.github.com/gfm" target="_blank" rel="noopener">GitHub Flavored Markdown Spec</a></li>
+<li><a href="https://dwy6626.github.io/post/markdown-intro-history/" target="_blank" rel="noopener">為什麼我的 Markdown 會跑版？</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          </div>
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fas fa-paw"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Penny Li</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://pennys-blog.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://penny2243.github.io/2020/09/06/markdown/";
+    this.page.identifier = "2020/09/06/markdown/";
+    this.page.title = "學習 Markdown 及語法速記";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://pennys-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
