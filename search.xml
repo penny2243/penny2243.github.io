@@ -168,7 +168,7 @@ test();</code></pre></div><div class="tab-pane" id="democode-3"><p>雖然在 <a 
   <entry>
     <title>Node.js、npm、nvm 常用指令整理</title>
     <url>/2020/09/06/nodejs-npm-nvm-command/</url>
-    <content><![CDATA[<p><img src="npm.png" alt="Node.js and npm" title="Node.js and npm"></p>
+    <content><![CDATA[<p><img src="https://penny2243.github.io/2020/09/06/nodejs-npm-nvm-command/npm.png" alt="Node.js and npm" title="Node.js and npm"></p>
 <p>每次要做一些版本切換或是確認時，總是忘記要下什麼指令，因此一次整理方便以後查看。<br>先針對3個名詞簡單的介紹：</p>
 <h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>能夠在伺服器端運行 JavaScript 的執行環境，更詳細的介紹可以參考<a href="https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-25-be-node-js-%E8%88%87-javascript-%E7%9A%84%E9%97%9C%E4%BF%82%E6%98%AF%E4%BB%80%E9%BA%BC-7ab18c802609" target="_blank" rel="noopener">這篇文章</a>。</p>
 <h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p><strong>Node Package Manager</strong> 的簡稱，是用 JavaScript 編寫的套件管理工具， npm 是 Node.js 預設的套件管理工具，安裝 Node.js 即內建 npm ，顧名思義是在 Node 環境用來安裝及管理 dependency packages 的工具。</p>
