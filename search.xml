@@ -165,4 +165,41 @@ test();</code></pre></div><div class="tab-pane" id="democode-3"><p>雖然在 <a 
         <tag>Markdown</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Node.js、npm、nvm 常用指令整理</title>
+    <url>/2020/09/06/nodejs-npm-nvm-command/</url>
+    <content><![CDATA[<p><img src="npm.png" alt="Node.js and npm" title="Node.js and npm"></p>
+<p>每次要做一些版本切換或是確認時，總是忘記要下什麼指令，因此一次整理方便以後查看。<br>先針對3個名詞簡單的介紹：</p>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>能夠在伺服器端運行 JavaScript 的執行環境，更詳細的介紹可以參考<a href="https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-25-be-node-js-%E8%88%87-javascript-%E7%9A%84%E9%97%9C%E4%BF%82%E6%98%AF%E4%BB%80%E9%BA%BC-7ab18c802609" target="_blank" rel="noopener">這篇文章</a>。</p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p><strong>Node Package Manager</strong> 的簡稱，是用 JavaScript 編寫的套件管理工具， npm 是 Node.js 預設的套件管理工具，安裝 Node.js 即內建 npm ，顧名思義是在 Node 環境用來安裝及管理 dependency packages 的工具。</p>
+<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><p><strong>Node Version Manager</strong> 的簡稱，用来管理 Node.js 版本的工具。</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="安裝強烈建議"><a href="#安裝強烈建議" class="headerlink" title="安裝強烈建議"></a>安裝強烈建議</h2><p><strong><mark class="label danger">先安裝 nvm ， 再藉由 nvm 安裝 Node.js!!</mark></strong><br><strong><mark class="label danger">先安裝 nvm ， 再藉由 nvm 安裝 Node.js!!</mark></strong><br><strong><mark class="label danger">先安裝 nvm ， 再藉由 nvm 安裝 Node.js!!</mark></strong></p>
+<p>怎麼安裝 nvm 請直接參考官方文件<br>如果先安裝了 Node.js 才裝了 nvm ，可能會造成後續使用 nvm 切換版本有問題，屆時需要將 Node.js 及 npm 完全移除，這些坑有遇到的人再自行 google 解法囉~ XD</p>
+<hr>
+<h2 id="Node-js-常用指令"><a href="#Node-js-常用指令" class="headerlink" title="Node.js 常用指令"></a>Node.js 常用指令</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 檢視 node 版本</span></span><br><span class="line">node -v</span><br><span class="line">node --version</span><br></pre></td></tr></table></figure>
+<p><em>(看起來很廢…但想說就一起列上來)</em></p>
+<h2 id="npm-常用指令"><a href="#npm-常用指令" class="headerlink" title="npm 常用指令"></a>npm 常用指令</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 檢視 npm 的版本</span></span><br><span class="line">npm -v</span><br><span class="line">npm --version</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以 peckage.json 的配置安裝專案的 packages</span></span><br><span class="line">npm install</span><br><span class="line">npm i</span><br><span class="line"></span><br><span class="line"><span class="comment">// 安裝特定版本的 package ，依照 package.json 的配置，沒有的話裝最新的</span></span><br><span class="line">npm install &#123;&#123;package&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 安裝特定版本的 package  ex. npm install jquery@3.5.1</span></span><br><span class="line">npm install &#123;&#123;package&#125;&#125;@&#123;&#123;version&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除 package ，沒有輸入 package 就是專案內的全部移除</span></span><br><span class="line">npm uninstall &#123;&#123;package&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 列出目前專案安装的所有 packages/modules</span></span><br><span class="line">npm list</span><br><span class="line">npm ls</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顯示目前安裝的 package 版本</span></span><br><span class="line">npm list &#123;&#123;package&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 執行 package.json 配置的 script</span></span><br><span class="line">npm run &#123;&#123;script&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看各種命令的簡單用法</span></span><br><span class="line">npm -l</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看 npm 命令列表</span></span><br><span class="line">npm help</span><br></pre></td></tr></table></figure>
+
+<h2 id="nvm-常用指令"><a href="#nvm-常用指令" class="headerlink" title="nvm 常用指令"></a>nvm 常用指令</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 檢視現在使用的 nvm 版本</span></span><br><span class="line">nvm --version</span><br><span class="line"></span><br><span class="line"><span class="comment">// 列出目前 nvm 版本與可使用的指令</span></span><br><span class="line">nvm -v</span><br><span class="line"></span><br><span class="line"><span class="comment">// 檢視現在使用的 Node.js 版本</span></span><br><span class="line">nvm current</span><br><span class="line">nvm version</span><br><span class="line"></span><br><span class="line"><span class="comment">// 列出 local 所有的 Node.js 版本</span></span><br><span class="line">nvm ls</span><br><span class="line"></span><br><span class="line"><span class="comment">// 檢視 remote 所有可以安装的 Node.js 版本，加上 --lts 參數就可以只列出可用的 LTS</span></span><br><span class="line">nvm ls-remote --lts</span><br><span class="line"></span><br><span class="line"><span class="comment">// 安裝某個 Node.js 版本</span></span><br><span class="line">nvm install &#123;&#123;version&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除某個 Node.js 版本</span></span><br><span class="line">nvm uninstall &#123;&#123;version&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用某個 Node.js 版本</span></span><br><span class="line">nvm use &#123;&#123;version&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>參考</strong></p>
+<ul>
+<li><a href="https://juejin.im/post/6844904013398278157" target="_blank" rel="noopener">node.js与nvm、npm的关系</a></li>
+<li><a href="https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-25-be-node-js-%E8%88%87-javascript-%E7%9A%84%E9%97%9C%E4%BF%82%E6%98%AF%E4%BB%80%E9%BA%BC-7ab18c802609" target="_blank" rel="noopener">前端三十｜25. [BE] Node.js 與 JavaScript 的關係是什麼？</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Ｎode.js</category>
+        <category>npm</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>npm</tag>
+        <tag>nvm</tag>
+      </tags>
+  </entry>
 </search>
