@@ -3,7 +3,7 @@
   <entry>
     <title>學習 Markdown 及語法速記</title>
     <url>/2020/09/06/markdown/</url>
-    <content><![CDATA[<p><img src="https://penny2243.github.io/2020/09/06/markdown/gfm.jpeg" alt="Markdowm and GFM" title="Markdowm and GFM"></p>
+    <content><![CDATA[<p><img src="https://penny2243.github.io/2020/09/06/markdown/gfm.jpeg" alt="Markdown and GFM" title="Markdown and GFM"></p>
 <p>Markdown 是一種輕量級標記式語言，目標是實現「易讀易寫」，在<a href="https://markdown.tw/" target="_blank" rel="noopener">中文版 Ｍarkdown</a> 中提到，可以將之視為一種編寫的格式，而 HTML 是一種發佈的格式，創始人 John Gruber 對 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> 也是這麼介紹：</p>
 <blockquote>
 <p>Markdown is a text-to-HTML conversion tool for web writers.</p>
